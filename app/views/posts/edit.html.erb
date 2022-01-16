@@ -1,10 +1,4 @@
 <h1>Editing post</h1>
+<p style="color: green"><%= notice %></p>
 
 <%= render "form", post: @post %>
-
-<br>
-
-<div>
-  <%= link_to "Show this post", @post, class: 'button' %> |
-  <%= link_to "Back to posts", posts_path %>
-</div>

@@ -6,7 +6,8 @@
   <% @posts.each do |post| %>
     <span class="list-group-item mt-4">
       <%= render post %>
-      <%= link_to "Show this post", post %>
+      <%= link_to "Edit this post", edit_post_path(post) %>
+      <%= link_to "Delete this post", post_path(post), data: { "turbo-method": :delete }  %>
     </span>
   <% end %>
 </div>

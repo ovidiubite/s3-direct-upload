@@ -8,6 +8,10 @@
   </div>
 
   <% post.files.each do |file| %>
-    <%= image_tag(file, width: 200, class: 'img-thumbnail') %>
+    <% if file.representable? %>
+      <%= image_tag(file, width: 100, height: 100, class: 'img-thumbnail') %>
+    <% else %>
+      <%= link_to file.filename, rails_blob_path(file, disposition: :attachment) %>
+    <% end %>
   <% end %>
 </div>
