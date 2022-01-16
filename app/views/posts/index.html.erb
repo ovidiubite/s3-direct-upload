@@ -2,13 +2,13 @@
 
 <h1>Posts</h1>
 
-<div id="posts">
+<div class="list-group-horizontal">
   <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
+    <span class="list-group-item mt-4">
+      <%= render post %>
       <%= link_to "Show this post", post %>
-    </p>
+    </span>
   <% end %>
 </div>
 
-<%= link_to "New post", new_post_path %>
+<%= link_to "New post", new_post_path, class:'btn btn-primary mt-4' %>
