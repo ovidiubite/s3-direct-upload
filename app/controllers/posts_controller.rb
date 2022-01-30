@@ -63,6 +63,12 @@ class PostsController < ApplicationController
     redirect_back(fallback_location: posts_path)
   end
 
+  def file_content
+    file = ActiveStorage::Attachment.find(params[:file_id])
+
+    redirect_to file.url(expires_in: 30.seconds, disposition: :attachment), allow_other_host: true
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

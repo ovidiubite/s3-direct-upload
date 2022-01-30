@@ -3,4 +3,8 @@ class Post < ApplicationRecord
 
   validates_presence_of :title
   validates_presence_of :description
+
+  def file_url(options = {})
+    file.url(options)
+  end
 end
